@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    background-color: #222222;
+    height: 100%;
+    width: 100%;
+}
+body{
+    padding: 15px;
+    box-sizing: border-box;
+}
+#grid-box{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;    
+    grid-gap: 15px;
+    justify-content: center;
+}
+.botTagStyle{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.botContainerStyle{
+    background-color: #313131;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+.botActive{
+    border: 1px solid green;
+}
+.botInactive{
+    border: 1px solid crimson;
+}
+.botSuscribed{
+    border: 1px solid dodgerblue;
+}
+.botNotSuscribed{
+    border: 1px solid lightgoldenrodyellow;
+}
