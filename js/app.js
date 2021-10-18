@@ -1,5 +1,5 @@
 var lastTimeSeen = {};
-const botTimeout = 30;
+const botTimeout = 300;
 
 var websocketclient = {
     'client': null,
