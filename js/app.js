@@ -1,5 +1,5 @@
 var lastTimeSeen = {};
-const botTimeout = 120;
+const botTimeout = 30;
 
 var websocketclient = {
     'client': null,
@@ -10,18 +10,18 @@ var websocketclient = {
     'connected': false,
 
     'connect': function () {
-        var host = "broker.mqttdashboard.com";
-        var port = 8000;
+        var host = "0a2f200577e14e8cac5c43ccd86dd6e4.s1.eu.hivemq.cloud";
+        var port = 8884;
         var clientId = "barak";
-        var username = "";
-        var password = "";
+        var username = "barak";
+        var password = "Cinthia_97";
         var keepAlive = 60;
         var cleanSession = false;
         var lwTopic = "";
         var lwQos = 0;
         var lwRetain = false;
         var lwMessage = "";
-        var ssl = false;
+        var ssl = true;
         this.client = new Messaging.Client(host, port, clientId);
         this.client.onConnectionLost = this.onConnectionLost;
         this.client.onMessageArrived = this.onMessageArrived;
