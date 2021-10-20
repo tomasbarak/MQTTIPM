@@ -63,8 +63,14 @@ body{
 
     border: 1px solid dodgerblue;
 }
-.botNotSuscribed{
+.botNotSuscribed {
     border: 1px solid lightgoldenrodyellow;
+}
+html::-webkit-scrollbar-thumb{
+    background: #222222;
+}
+html::-webkit-scrollbar{
+    display: none;
 }
 @media screen and (max-width: 480px){
     #grid-box{

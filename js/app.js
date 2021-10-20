@@ -1,5 +1,5 @@
 var lastTimeSeen = {};
-const botTimeout = 300;
+const botTimeout = 10;
 
 var websocketclient = {
     'client': null,
@@ -89,14 +89,14 @@ var websocketclient = {
         if(messageObj.topic.includes("ipmAttackCondition")){
             const nowDate = new Date()
             const now = Math.round(nowDate.getTime() / 1000)
-            console.log(now-botTimeout, Number(messageObj.payload))
+            //console.log(now-botTimeout, Number(messageObj.payload))
             let activeBotId = messageObj.topic.substring(messageObj.topic.indexOf('-')+1, messageObj.topic.length);
             let botContainer = document.getElementById('botContainer-'+activeBotId);
-            console.log(activeBotId)
+            //console.log(activeBotId)
             lastTimeSeen[activeBotId] = Number(messageObj.payload);
             websocketclient.checkLastSeen();
         }
-        console.log(messageObj);
+        //console.log(messageObj);
         websocketclient.messages.push(messageObj);
     },
 
@@ -160,7 +160,9 @@ var websocketclient = {
             botTag.id = "botTag-" + fixedBotId;
 
             botContainer.classList.add("botContainerStyle");
-
+            botContainer.addEventListener('click', function () {
+                window.location = "dashboard.html?bot="+fixedBotId;
+            })
             botContainer.appendChild(botTag);
             botContainer.id = "botContainer-"+fixedBotId;
 
@@ -195,9 +197,9 @@ var websocketclient = {
                 //console.log(bot)
                 if(now-botTimeout < lastTimeSeen[bot]){
 
-                    console.log(bot + " is active")
+                    //console.log(bot + " is active")
                     if(!botContainer.classList.contains('botActive')) {
-                        console.log("anaashe")
+                        //console.log("anaashe")
                         botContainer.classList.remove('botInactive');
                         botContainer.classList.remove('botSuscribed');
                         botContainer.classList.remove('botActive');
